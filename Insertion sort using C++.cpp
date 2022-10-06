@@ -19,7 +19,7 @@ int c;
         if (i == n-2)
                 arr[n-2-i] = c; 
         }
-        else if(i == n -2 || arr[n-2-i]){
+        else{
             arr[n-1-i] = c;
            
             break;
