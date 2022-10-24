@@ -1,10 +1,15 @@
+import operator
+from collections import Counter
 class Solution(object):
-    def topKFrequent(self, nums, k):
-        ans = []
-        freq = self.sort_dict(Counter(nums))
-        for i in range(k):
-            ans.append(freq[i][0])
-        return ans
+    def minSetSize(self, arr):
+        sum = count = 0
+        freq = self.sort_dict(Counter(arr))
+        for i in freq:
+            count+=1
+            sum+= i[1]
+            if sum >= len(arr)/2:
+                return count
+        return count
     def sort_dict(self, book):
         li  = book.items()
         self.Sort(li)
